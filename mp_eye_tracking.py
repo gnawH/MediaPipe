@@ -41,6 +41,9 @@ while cap.isOpened():
     # Face Mesh 감지 실행
     results = face_mesh.process(image)
 
+    # RGB에서 BGR로 변환
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+
     # 결과 데이터 출력
     if results.multi_face_landmarks:
         for face_landmarks in results.multi_face_landmarks:
@@ -61,12 +64,12 @@ while cap.isOpened():
                 cv2.circle(image, (x, y), 2, (0, 0, 255), -1)
                 print(f"{name}: ({x}, {y}), z: {landmark.z: .3f}")
 
-    # 결과 화면 출력
-    cv2.imshow("MediaPipe Face Mesh", image)
+        # 결과 화면 출력
+        cv2.imshow("MediaPipe Face Mesh", image)
 
-    # 종료 옵션
-    if cv2.waitKey(5) & 0xFF == ord('q'):
-        break
+        # 종료 옵션
+        if cv2.waitKey(5) & 0xFF == ord('q'):
+            break
 
 # 리소스 해제
 cap.release()
