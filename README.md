@@ -1,5 +1,5 @@
-# Mediapipe
-Study Google Machine Learning Solution Framework 'Mediapipe'
+# MediaPipe
+Study Google Machine Learning Solution Framework 'MediaPipe'
 
 # 환경 세팅
 ### conda 가상 환경 활성화 (vision)
